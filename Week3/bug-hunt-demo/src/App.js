@@ -36,13 +36,13 @@ export default function App() {
     // Bug 3: Directly trying to modify the state object
     // name.fname = "Bruce";
     // name.lname = "Wayne";
-    setName("Bruce", "Wayne");
+    setName({fname:"Bruce", lname:"Wayne"});
   };
 
   // 4. We want to increase the counter by one every second, but it displays NaN
   useEffect(() => {
     const interval = setInterval(() => {
-        setTime(time + 1);
+        setTime((prev) => prev + 1);
       }, 1000);
 
     return () => clearInterval(interval);
@@ -54,9 +54,10 @@ export default function App() {
       <button onClick={setCountValue}>Increase Count Two</button>
       <button onClick={changeName}>Change Name</button>
       {/* 5. Why does the following code cause an infinite loop ? */}
-      {/* <button onClick={setCounter(counter + 1)}>
+      <button onClick={() => setCounter((prev) => prev + 1)}>
         Stupid Button
-      </button>{" "} */}
+      </button>
+      {" "} 
       <h3>Counter One: {counter}</h3>
       <h3>Counter Two: {counterTwo}</h3>
       <h3>Name is : {name.fname + " " + name.lname}</h3>
