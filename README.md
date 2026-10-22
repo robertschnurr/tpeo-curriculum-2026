@@ -1,5 +1,7 @@
 # Welcome to the TPEO 2026 Full Stack Curriculum!
 
+https://texas-product-engineering-organization.notion.site/Full-stack-Curriculum-204af3f6e92a812da4a7fdeec617f563
+
 # Fork Environment
 This repository will be using a fork structure, meaning that fellows will **commit to their own local respository** while **pulling new weekly content from this one**. Weekly content will be updated on the master branch, but a copy of all previous week's content will be available via branches.
 
